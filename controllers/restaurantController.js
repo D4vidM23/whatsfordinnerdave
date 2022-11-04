@@ -7,22 +7,23 @@ module.exports.viewAll = async function(req, res, next) {
 }
 module.exports.renderEditForm = async function(req, res, next) {
     const restaurant = await Restaurant.findByPk(
-    req.params.id
+        req.params.id
     );
     res.render('edit', {restaurant, categories});
 }
 module.exports.updateRestaurant = async function(req, res) {
     await Restaurant.update(
         {
-            name:req.body.name,
+            name: req.body.name,
             category: req.body.category,
-            rating:req.body.rating,
-            image:req.body.description
+            rating: req.body.rating,
+            image: req.body.image,
+            description: req.body.description,
         },
-        {
+            {
             where:
                 {
-                    id :req.params.id
+                    id: req.params.id
                 }
         });
     res.redirect('/')

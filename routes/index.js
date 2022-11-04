@@ -13,4 +13,6 @@ router.get('/add', restaurantController.renderAddForm);
 
 router.post('/add', restaurantController.addRestaurant);
 
+router.post('/add', restaurantController.updateRestaurant);
+
 module.exports = router;

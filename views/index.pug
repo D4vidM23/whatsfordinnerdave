@@ -3,6 +3,11 @@ extends layout
 block content
   include mixins/restaurantCard
   div.container
+    form(action='/' method='get')
+      div.form-input
+        label(for='category') Category
+        select(id='category' name='category' autocomplete='off')
+  div.container
     div.add-button-row
       a.button.save(href="/add") Add Restaurant
   div.container
